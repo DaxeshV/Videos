@@ -51,8 +51,8 @@ class OnlineVideoListModel(context: Context) : BaseModel<Array<TVGroup>?>(contex
             try {
                 val url = URL(LINK_TVS_JSON)
                 conn = url.openConnection() as HttpURLConnection
-//                    conn.connectTimeout = TIMEOUT_CONNECTION;
-//                    conn.readTimeout = TIMEOUT_READ;
+//                conn.connectTimeout = TIMEOUT_CONNECTION;
+//                conn.readTimeout = TIMEOUT_READ;
 
                 reader = BufferedReader(InputStreamReader(conn.inputStream, "utf-8"))
                 jsonFileOut = jsonFile.startWrite()

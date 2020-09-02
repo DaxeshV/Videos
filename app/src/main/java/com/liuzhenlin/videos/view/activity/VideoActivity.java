@@ -1024,12 +1024,12 @@ public class VideoActivity extends SwipeBackActivity {
                         ViewGroup.LayoutParams.MATCH_PARENT);
                 if ((mPrivateFlags & PFLAG_SCREEN_NOTCH_SUPPORT_ON_EMUI) != 0
                         && (mPrivateFlags & PFLAG_SCREEN_NOTCH_HIDDEN) != 0) {
-//                        mVideoView.setPadding(0, 0, 0, 0);
+//                    mVideoView.setPadding(0, 0, 0, 0);
                     for (int i = 0, childCount = mVideoView.getChildCount(); i < childCount; i++) {
                         UiUtils.setViewMargins(mVideoView.getChildAt(i), 0, 0, 0, 0);
                     }
                 } else if ((mPrivateFlags & PFLAG_SCREEN_NOTCH_SUPPORT) != 0) {
-//                        mVideoView.setPadding(mNotchHeight, 0, 0, 0);
+//                    mVideoView.setPadding(mNotchHeight, 0, 0, 0);
                     for (int i = 0, childCount = mVideoView.getChildCount(); i < childCount; i++) {
                         //noinspection SuspiciousNameCombination
                         UiUtils.setViewMargins(mVideoView.getChildAt(i), mNotchHeight, 0, 0, 0);
@@ -1041,12 +1041,12 @@ public class VideoActivity extends SwipeBackActivity {
                         ViewGroup.LayoutParams.MATCH_PARENT);
                 if ((mPrivateFlags & PFLAG_SCREEN_NOTCH_SUPPORT_ON_EMUI) != 0
                         && (mPrivateFlags & PFLAG_SCREEN_NOTCH_HIDDEN) != 0) {
-//                        mVideoView.setPadding(0, 0, 0, 0);
+//                    mVideoView.setPadding(0, 0, 0, 0);
                     for (int i = 0, childCount = mVideoView.getChildCount(); i < childCount; i++) {
                         UiUtils.setViewMargins(mVideoView.getChildAt(i), 0, 0, 0, 0);
                     }
                 } else if ((mPrivateFlags & PFLAG_SCREEN_NOTCH_SUPPORT) != 0) {
-//                        mVideoView.setPadding(0, 0, mNotchHeight, 0);
+//                    mVideoView.setPadding(0, 0, mNotchHeight, 0);
                     for (int i = 0, childCount = mVideoView.getChildCount(); i < childCount; i++) {
                         //noinspection SuspiciousNameCombination
                         UiUtils.setViewMargins(mVideoView.getChildAt(i), 0, 0, mNotchHeight, 0);
@@ -1165,7 +1165,7 @@ public class VideoActivity extends SwipeBackActivity {
                 requestCode,
                 new Intent(ACTION_MEDIA_CONTROL).putExtra(EXTRA_PIP_ACTION, pipAction),
                 0);
-        Icon icon = IconCompat.createWithResource(this, iconId).toIcon();
+        Icon icon = IconCompat.createWithResource(this, iconId).toIcon(this);
         return new RemoteAction(icon, title, title, intent);
     }
 

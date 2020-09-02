@@ -182,7 +182,7 @@ public class BackgroundPlaybackControllerService extends Service {
         if (playbackActivityClass != null) {
             Intent it = new Intent(this, playbackActivityClass)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
-                            Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                            Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             mNotificationBuilder.setContentIntent(PendingIntent.getActivity(this, 0, it, 0));
         }
         if (mediaUri != null) {
@@ -291,7 +291,7 @@ public class BackgroundPlaybackControllerService extends Service {
             nv.setImageViewIcon(viewId,
                     IconCompat.createWithResource(this, resId)
                             .setTint(sNotificationActionIconTint)
-                            .toIcon());
+                            .toIcon(this));
         } else {
             // Creates a bitmap from a tinted retrieved drawable instead,
             // for compatibility of vector drawable resource that can not be directly created

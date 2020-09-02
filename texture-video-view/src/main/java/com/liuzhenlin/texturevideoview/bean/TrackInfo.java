@@ -46,16 +46,4 @@ public abstract class TrackInfo implements Parcelable {
     public int describeContents() {
         return 0;
     }
-
-    public static final Creator<TrackInfo> CREATOR = new Creator<TrackInfo>() {
-        @Override
-        public TrackInfo createFromParcel(Parcel in) {
-            return new TrackInfo(in) {};
-        }
-
-        @Override
-        public TrackInfo[] newArray(int size) {
-            return new TrackInfo[size];
-        }
-    };
 }

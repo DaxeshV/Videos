@@ -42,16 +42,4 @@ public abstract class MediaTrackInfo extends TrackInfo implements Parcelable {
     public int describeContents() {
         return 0;
     }
-
-    public static final Creator<MediaTrackInfo> CREATOR = new Creator<MediaTrackInfo>() {
-        @Override
-        public MediaTrackInfo createFromParcel(Parcel in) {
-            return new MediaTrackInfo(in) {};
-        }
-
-        @Override
-        public MediaTrackInfo[] newArray(int size) {
-            return new MediaTrackInfo[size];
-        }
-    };
 }

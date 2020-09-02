@@ -132,17 +132,17 @@ public class IjkVideoPlayer extends VideoPlayer {
               .build()
           : null;
 
-//    private static HttpProxyCacheServer sCacheServer;
+//  private static HttpProxyCacheServer sCacheServer;
 
-//    private HttpProxyCacheServer getCacheServer() {
-//      if (sCacheServer == null) {
-//        sCacheServer = new HttpProxyCacheServer.Builder(mContext)
-//            .cacheDirectory(new File(getBaseVideoCacheDirectory(), "ijk"))
-//            .maxCacheSize(DEFAULT_MAXIMUM_CACHE_SIZE)
-//            .build();
-//      }
-//      return sCacheServer;
+//  private HttpProxyCacheServer getCacheServer() {
+//    if (sCacheServer == null) {
+//      sCacheServer = new HttpProxyCacheServer.Builder(mContext)
+//          .cacheDirectory(new File(getBaseVideoCacheDirectory(), "ijk"))
+//          .maxCacheSize(DEFAULT_MAXIMUM_CACHE_SIZE)
+//          .build();
 //    }
+//    return sCacheServer;
+//  }
 
   public IjkVideoPlayer(@NonNull Context context) {
     super(context);
@@ -629,15 +629,15 @@ public class IjkVideoPlayer extends VideoPlayer {
     }
   }
 
-// @Override
-// public void setSingleVideoLoopPlayback(boolean looping) {
-//   if (looping != isSingleVideoLoopPlayback()) {
-//     if (mIjkPlayer != null) {
-//       mIjkPlayer.setLooping(looping);
-//     }
-//     super.setSingleVideoLoopPlayback(looping);
-//   }
-// }
+//  @Override
+//  public void setSingleVideoLoopPlayback(boolean looping) {
+//    if (looping != isSingleVideoLoopPlayback()) {
+//      if (mIjkPlayer != null) {
+//        mIjkPlayer.setLooping(looping);
+//      }
+//      super.setSingleVideoLoopPlayback(looping);
+//    }
+//  }
 
   @Override
   public boolean hasTrack(int trackType) {

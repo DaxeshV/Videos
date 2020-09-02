@@ -218,7 +218,7 @@ public class VlcVideoPlayer extends VideoPlayer {
 //      vout.setSubtitlesSurface(surface, null);
       vout.attachViews();
 
-//     mMediaPlayer.setLooping(isSingleVideoLoopPlayback());
+//      mMediaPlayer.setLooping(isSingleVideoLoopPlayback());
       setPlaybackSpeed(mUserPlaybackSpeed);
 
       mMediaPlayer.setEventListener(event -> {

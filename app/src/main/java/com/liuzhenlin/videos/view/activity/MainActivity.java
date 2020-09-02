@@ -888,7 +888,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onLocalFoldedVideosFragmentDetached() {
-//                mActionBar.setVisibility(View.VISIBLE)
+//        mActionBar.setVisibility(View.VISIBLE)
         mActionBarContainer.removeView(mTmpActionBar);
         mTmpActionBar = null;
     }

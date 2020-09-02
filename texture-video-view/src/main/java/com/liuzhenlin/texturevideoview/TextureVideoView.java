@@ -1655,7 +1655,7 @@ public class TextureVideoView extends AbsTextureVideoView implements ViewHostEve
                 ViewGroup.LayoutParams tvlp = mTextureView.getLayoutParams();
                 tvlp.width = tvw;
                 tvlp.height = tvh;
-//            mTextureView.setLayoutParams(tvlp);
+//                mTextureView.setLayoutParams(tvlp);
             }
         }
 
@@ -2952,6 +2952,7 @@ public class TextureVideoView extends AbsTextureVideoView implements ViewHostEve
         }
 
         // Offer the speed spinner an OnClickListener as needed
+        @SuppressWarnings("SameReturnValue")
         boolean onTouchSpinner(MotionEvent event) {
             switch (event.getActionMasked()) {
                 case MotionEvent.ACTION_DOWN:
@@ -3059,6 +3060,7 @@ public class TextureVideoView extends AbsTextureVideoView implements ViewHostEve
             }
         }
 
+        @SuppressWarnings("SameReturnValue")
         boolean onTouchDrawerTransparentArea(MotionEvent event) {
             detector.onTouchEvent(event);
             return true;

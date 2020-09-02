@@ -634,7 +634,7 @@ public final class MergeAppUpdateChecker {
                     URL url = new URL(mAppPartLinks[index]);
                     conn = (HttpURLConnection) url.openConnection();
                     conn.setConnectTimeout(TIMEOUT_CONNECTION);
-//                        conn.setReadTimeout(TIMEOUT_READ);
+//                    conn.setReadTimeout(TIMEOUT_READ);
 
                     // 从服务器请求全部资源返回 200 ok；从服务器请求部分资源返回 206 ok
                     // final int responseCode = conn.getResponseCode();
@@ -654,7 +654,7 @@ public final class MergeAppUpdateChecker {
                         out.write(buffer, 0, len);
 
                         if (!mHost.mCanceled.get()) {
-//                                publishProgress(len);
+//                            publishProgress(len);
                             notifyProgressUpdated(mProgress.addAndGet(len));
                         }
                     }
@@ -690,7 +690,7 @@ public final class MergeAppUpdateChecker {
 
             @Override
             protected void onProgressUpdate(Integer... values) {
-//                    notifyProgressUpdated(mProgress += values[0]);
+//                notifyProgressUpdated(mProgress += values[0]);
             }
 
             private void notifyProgressUpdated(int progress) {
@@ -737,7 +737,7 @@ public final class MergeAppUpdateChecker {
 
             Intent it = Utils.createPackageInstaller(mContext, apk);
 
-//                mContext.startActivity(it); // MIUI默认应用在后台时无法弹出界面
+//            mContext.startActivity(it); // MIUI默认应用在后台时无法弹出界面
 
             String title = mContext.getString(R.string.newAppDownloaded);
             PendingIntent pi = PendingIntent.getActivity(mContext, 0, it, 0);
@@ -748,7 +748,7 @@ public final class MergeAppUpdateChecker {
                             .setContentTitle(title)
                             .setContentText(mContext.getString(R.string.clickToInstallIt))
                             .setContentIntent(pi)
-//                                .setFullScreenIntent(pi, true)
+//                            .setFullScreenIntent(pi, true)
                             .setAutoCancel(true)
                             .setCustomContentView(null)
                             .setCustomBigContentView(null)
