@@ -48,8 +48,6 @@ import com.liuzhenlin.videos.R;
 
 import org.apache.http.conn.ConnectTimeoutException;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -645,8 +643,8 @@ public final class MergeAppUpdateChecker {
                         apkPart.delete();
                     }
 
-                    in = new BufferedInputStream(conn.getInputStream());
-                    out = new BufferedOutputStream(new FileOutputStream(apkPart));
+                    in = conn.getInputStream();
+                    out = new FileOutputStream(apkPart);
 
                     int len;
                     final byte[] buffer = new byte[8 * 1024];

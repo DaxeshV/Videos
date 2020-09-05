@@ -46,7 +46,6 @@ import com.liuzhenlin.videos.R;
 
 import org.apache.http.conn.ConnectTimeoutException;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -689,7 +688,7 @@ public final class AppUpdateChecker {
                         // 从服务器请求全部资源返回 200 ok；从服务器请求部分资源返回 206 ok
                         // final int responseCode = conn.getResponseCode();
 
-                        in = new BufferedInputStream(conn.getInputStream());
+                        in = conn.getInputStream();
 
                         out = new RandomAccessFile(mApk, "rwd");
                         out.seek(startIndex);
