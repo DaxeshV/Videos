@@ -15,6 +15,7 @@ import com.liuzhenlin.texturevideoview.InternalConsts
 import com.liuzhenlin.texturevideoview.misc.ParallelThreadExecutor
 import com.liuzhenlin.texturevideoview.utils.FileUtils
 import com.liuzhenlin.videos.bean.TVGroup
+import com.liuzhenlin.videos.utils.Utils
 import java.io.*
 import java.net.HttpURLConnection
 import java.net.URL
@@ -116,8 +117,10 @@ class OnlineVideoListModel(context: Context) : BaseModel<Array<TVGroup>?>(contex
                     return Gson().fromJson(
                             json.toString(), object : TypeToken<Array<TVGroup>>() {}.type)
 
-                ioException != null ->
-                    InternalConsts.getMainThreadHandler().post { onLoadError(ioException) }
+                ioException != null -> {
+                    Utils.runOnHandlerSync(InternalConsts.getMainThreadHandler()) {
+                        onLoadError(ioException) }
+                }
             }
 
             return null
