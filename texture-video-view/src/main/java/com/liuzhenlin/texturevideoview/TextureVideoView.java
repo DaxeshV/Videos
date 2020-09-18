@@ -238,6 +238,7 @@ import java.util.List;
  *             public void onViewModeChange(int oldMode, int newMode, boolean layoutMatches) {
  *                 switch (newMode) {
  *                     case TextureVideoView.VIEW_MODE_MINIMUM:
+ *                         //noinspection StatementWithEmptyBody
  *                         if (!layoutMatches) {
  *                             // do something like entering picture-in-picture mode
  *                         }
@@ -278,7 +279,7 @@ import java.util.List;
  *                 return DemoActivity.this.getClass();
  *             }
  *
- *             // Optional, just returns null to use the default output directory
+ *             // Optional, just returns null to use the default base output directory
  *             // (the primary external storage directory concatenating with this application name).
  *             &#064;Nullable
  *             &#064;Override
