@@ -408,18 +408,7 @@ public final class MergeAppUpdateChecker {
 
         @Synthetic NotificationManager mNotificationManager;
         @Synthetic NotificationCompat.Builder mNotificationBuilder;
-
-        private static final String TAG_NOTIFICATION =
-                "notification_MergeAppUpdateChecker$UpdateAppService";
-        @Synthetic static final int ID_NOTIFICATION;
-
-        static {
-            int count = 0;
-            for (int i = TAG_NOTIFICATION.length() - 1; i >= 0; i--) {
-                count += TAG_NOTIFICATION.charAt(i);
-            }
-            ID_NOTIFICATION = count;
-        }
+        @Synthetic static final int ID_NOTIFICATION = 20200330;
 
         private static final int CPU_COUNT = Runtime.getRuntime().availableProcessors();
         // We want at least 2 threads and at most 4 threads to download the new apk,
@@ -457,10 +446,10 @@ public final class MergeAppUpdateChecker {
 
             mNotificationManager = (NotificationManager)
                     mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+            String channelId = NotificationChannelManager.getDownloadNotificationChannelId(mContext);
             RemoteViews nv = createNotificationView();
-            mNotificationBuilder = new NotificationCompat.Builder(
-                    mContext, NotificationChannelManager.getDownloadNotificationChannelId(mContext))
-                    .setSmallIcon(mContext.getApplicationInfo().icon)
+            mNotificationBuilder = new NotificationCompat.Builder(mContext, channelId)
+                    .setSmallIcon(R.drawable.ic_media_app_notification)
                     .setTicker(mContext.getString(R.string.downloadingUpdates))
                     .setCustomContentView(nv)
                     .setCustomBigContentView(nv)

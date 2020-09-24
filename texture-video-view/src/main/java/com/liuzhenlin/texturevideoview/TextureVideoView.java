@@ -4021,7 +4021,7 @@ public class TextureVideoView extends AbsTextureVideoView implements ViewHostEve
     }
 
     private static final class BackgroundPlaybackControllerServiceConn implements ServiceConnection {
-        BackgroundPlaybackControllerService.Binder service;
+        BackgroundPlaybackControllerService.Proxy service;
 
         TextureVideoView serviceHolder;
 
@@ -4030,7 +4030,7 @@ public class TextureVideoView extends AbsTextureVideoView implements ViewHostEve
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            this.service = (BackgroundPlaybackControllerService.Binder) service;
+            this.service = (BackgroundPlaybackControllerService.Proxy) service;
         }
 
         @Override

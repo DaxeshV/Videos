@@ -32,9 +32,9 @@ public class InternalConsts {
     @RestrictTo(LIBRARY)
     public static final String EXTRA_PLAYBACK_ACTIVITY_CLASS = "extra_playbackActivityClass";
     @RestrictTo(LIBRARY)
-    public static final String EXTRA_MEDIA_TITLE = "extra_mediaTitle";
-    @RestrictTo(LIBRARY)
     public static final String EXTRA_MEDIA_URI = "extra_mediaUri";
+    @RestrictTo(LIBRARY)
+    public static final String EXTRA_MEDIA_TITLE = "extra_mediaTitle";
     @RestrictTo(LIBRARY)
     public static final String EXTRA_IS_PLAYING = "extra_isPlaying";
     @RestrictTo(LIBRARY)
