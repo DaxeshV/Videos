@@ -4084,6 +4084,7 @@ public class TextureVideoView extends AbsTextureVideoView implements ViewHostEve
                 if (videoView == serviceHolder) {
                     videoView.mContext.unbindService(this);
                     service = null;
+                    serviceHolder = null;
                     return true;
                 }
             }
