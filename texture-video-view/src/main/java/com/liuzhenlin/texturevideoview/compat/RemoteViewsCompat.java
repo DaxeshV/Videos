@@ -14,6 +14,7 @@ import android.widget.RemoteViews;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
+import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.content.res.AppCompatResources;
@@ -32,7 +33,7 @@ public class RemoteViewsCompat {
     public static void setImageViewResource(
             @NonNull Context ctx,
             @NonNull RemoteViews remoteViews,
-            int viewId,
+            @IdRes int viewId,
             @DrawableRes int resId) {
         setImageViewResourceWithTintList(ctx, remoteViews, viewId, resId, null);
     }
@@ -40,7 +41,7 @@ public class RemoteViewsCompat {
     public static void setImageViewResourceWithTint(
             @NonNull Context ctx,
             @NonNull RemoteViews remoteViews,
-            int viewId,
+            @IdRes int viewId,
             @DrawableRes int resId,
             @ColorInt int tint) {
         setImageViewResourceWithTintList(ctx, remoteViews, viewId, resId, ColorStateList.valueOf(tint));
@@ -49,7 +50,7 @@ public class RemoteViewsCompat {
     public static void setImageViewResourceWithTintList(
             @NonNull Context ctx,
             @NonNull RemoteViews remoteViews,
-            int viewId,
+            @IdRes int viewId,
             @DrawableRes int resId,
             @Nullable ColorStateList tintList) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
